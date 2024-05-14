@@ -20,12 +20,11 @@
     <br />
 
     <div id="form">
-      <form>
         <fieldset id="caixa">
           <div id="nome0">
             <label>DIGITE O NOME</label>
             <br />
-            <input type="text" name="DIGITE SEU NOME" class="nome" />
+            <input type="text" name="DIGITE SEU NOME" class="nome" id="nome" />
           </div>
           <br />
           <div id="sobrenome">
@@ -52,10 +51,11 @@
         <br />
         <div id="vdc">
           <div>
-            <label class="btn">Salvar</label>
+            <button class="btn" onclick="pegarNome()">Salvar</button>
           </div>
         </div>
-      </form>
     </div>
   </body>
+
+  <script src="script.js"></script>
 </html>
