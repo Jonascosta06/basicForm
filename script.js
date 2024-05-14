@@ -1,9 +1,9 @@
 function pegarNome() {
 let nome = document.querySelector("#nome").value
 
-if (nome === "carro") {
-console.log("deu certo");
+if (nome === "Jonas") {
+console.log("USUÁRIO JÁ CADASTRADO");
 }else{
-console.log("cah")
+console.log("USUÁRIO NOVO")
 }
 }
