@@ -1,4 +1,9 @@
 function pegarNome() {
-    const nome = document.querySelector('#nome')
-    console.log(nome.value)
+let nome = document.querySelector("#nome").value
+
+if (nome === "carro") {
+console.log("deu certo");
+}else{
+console.log("cah")
+}
 }
