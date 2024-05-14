@@ -1,70 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Formulario</title>
     <style>
-        body{
-            background-image: linear-gradient(to right, #1100ff, #01220c)
-        }
-        </style>
-</head>
+      body {
+        background-image: linear-gradient(to right, #1100ff, #01220c);
+      }
+    </style>
+  </head>
 
-
-
-<body>
-    
+  <body>
     <div id="titulo">
-        <h1 >FORMULARIO</h1>
-        <p class="subtitulo">COLOQUE AS INFORMAÇÕES CORRETAMENTE</p>
+      <h1>FORMULARIO</h1>
+      <p class="subtitulo">COLOQUE AS INFORMAÇÕES CORRETAMENTE</p>
     </div>
-    <br>
-    
+    <br />
+
     <div id="form">
-        <form>
+      <form>
         <fieldset id="caixa">
+          <div id="nome0">
+            <label>DIGITE O NOME</label>
+            <br />
+            <input type="text" name="DIGITE SEU NOME" class="nome" />
+          </div>
+          <br />
+          <div id="sobrenome">
+            <label>DIGITE O SOBRENOME</label>
+            <br />
+            <input type="text" name="DIGITE SEU SOBRENOME" id="SOBRENOME" />
+          </div>
 
-    <div id="nome0">
-        <label>DIGITE O NOME</label>
-        <br>
-        <input type="text" name="DIGITE SEU NOME" class="nome">
+          <br />
+
+          <div id="data">
+            <label class="quebra">QUAL A DATA DE NASCIMENTO?</label>
+            <br />
+            <input type="date" name="date" min="2000-01-01" max="2024-05-06" />
+          </div>
+          <br />
+
+          <div id="cpf">
+            <label>DIGITE O CPF</label>
+            <br />
+            <input type="text" name="CPF" maxlength="11" />
+          </div>
+        </fieldset>
+        <br />
+        <div id="vdc">
+          <div>
+            <label class="btn">Salvar</label>
+          </div>
+        </div>
+      </form>
     </div>
-    <br>
-    <div id="sobrenome">
-        <label>DIGITE O SOBRENOME</label>
-        <br>
-        <input type="text" name="DIGITE SEU SOBRENOME" id="SOBRENOME"> 
-    </div>
-    
-        
-    <br>
-    
-    <div id="data">
-        <label class="quebra">QUAL A DATA DE NASCIMENTO?</label>
-        <br>
-        <input type="date" name="date" min="2000-01-01" max="2024-05-06">
-
-    </div>
-    <br>
-
-    <div id="cpf">
-        <label>DIGITE O CPF</label>
-        <br>
-        <input type="text" name="CPF" maxlength="11">
-
-    </div>
-    </fieldset>
-    <br>
-<div id="vdc">
-
-    <div>
-        <label class="btn" >Salvar</label>
-
-    </div>
-</div>
-</div>
-</body>
-</form>
+  </body>
 </html>
