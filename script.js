@@ -1,13 +1,11 @@
+const form = document.querySelector("#theform");
 const tableElement = document.querySelector("#userTable");
 const inputNomeUsuario = document.querySelector("#nome");
 const inputSobrenomeUsuario = document.querySelector("#sobrenome");
 const inputcpf = document.querySelector("#cpf");
 const inputdata = document.querySelector("#data");
 
-const usuariosCadastrados = [
-  { nome: "jonas", sobrenome: "costa", cpf: "123.123.123-23" },
-  { nome: "roniele", sobrenome: "paiva" },
-];
+const usuariosCadastrados = [];
 
 function limpaCampos() {
   inputNomeUsuario.value = "";
@@ -76,7 +74,7 @@ function gerarTabela() {
   }
 }
 gerarTabela();
-btn.addEventListener("submit", async (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
   registroUsuarios();
   gerarTabela();
