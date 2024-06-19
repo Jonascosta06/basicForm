@@ -1,72 +1,83 @@
-let nome, sobrenome, cpf, formulario
+const tableElement = document.querySelector("#userTable");
+const inputNomeUsuario = document.querySelector("#nome");
+const inputSobrenomeUsuario = document.querySelector("#sobrenome");
+const inputcpf = document.querySelector("#cpf");
+const inputdata = document.querySelector("#data");
 
+const usuariosCadastrados = [
+  { nome: "jonas", sobrenome: "costa", cpf: "123.123.123-23" },
+  { nome: "roniele", sobrenome: "paiva" },
+];
 
-function pegarNome() {
-  nome = document.querySelector("#nome").value.toLowerCase();
-  if (nome == "") {
-    alert("Preencha o campo nome");
+function limpaCampos() {
+  inputNomeUsuario.value = "";
+  inputSobrenomeUsuario.value = "";
+  inputcpf.value = "";
+  inputdata.value = "";
+}
+
+function verificarOUsuarioCadastrado(lista, nomeuser) {
+  const nome = nomeuser.toLowerCase();
+  console.log(nome);
+  for (let usuario of lista) {
+    const nomeSobrenome =
+      usuario.nome.toLowerCase() + usuario.sobrenome.toLowerCase();
+    if (nomeSobrenome === nome) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function registroUsuarios() {
+  const nome = inputNomeUsuario.value.trim();
+  const segundoNome = inputSobrenomeUsuario.value.trim();
+  const cpf = inputcpf.value.trim();
+  const data = inputdata.value;
+  const taVazio = !nome;
+
+  if (taVazio) {
+    alert("digite um nome");
     return;
   }
   if (nome.length < 3) {
-    console.log("Nome de usuário deve ter mais do que 3 caracteres");
+    alert("Nome muito pequeno");
     return;
-  } else if (nome === "jonas") {
-    console.log("USUÁRIO JÁ CADASTRADO");
-  } else {
-    console.log("USUÁRIO NOVO");
+  }
+
+  const jaRegistrado = verificarOUsuarioCadastrado(
+    usuariosCadastrados,
+    nome + segundoNome
+  );
+
+  if (jaRegistrado) {
+    alert("Usuário ja existe");
+    return;
+  }
+  usuariosCadastrados.push({
+    nome: nome,
+    sobrenome: segundoNome,
+    data: data,
+    cpf: cpf,
+  });
+  limpaCampos();
+
+  console.log("Usuário Registrado", usuariosCadastrados);
+}
+function gerarTabela() {
+  tableElement.innerHTML = "";
+  for (usuario of usuariosCadastrados) {
+    const linha = `<tr>
+  <td>${usuario.nome} ${usuario.sobrenome}</td>
+      <td>${usuario.cpf || ""}</td>
+      <td>${usuario.data || ""}</td>
+  </tr>`;
+    tableElement.innerHTML += linha;
   }
 }
-
-
-function pegarsobrenome() {
-  sobrenome = document.querySelector("#sobrenome").value;
-
-  if (sobrenome == "") {
-    console.log("Preencha o campo sobrenome");
-    return;
-  }
-
-  if (sobrenome.length < 3) {
-    console.log("Sobrenome do usuário deve ter mais do que 3 caracteres");
-    return;
-  }
-  if (nome === "costa") {
-    console.log("USUÁRIO JÁ CADASTRADO");
-  } else {
-    console.log("USUÁRIO NOVO");
-  }
-}
-
-
-function pegarCPF() {
-   cpf = document.querySelector("#cpf").value;
-
-  if (cpf == "") {
-    console.log("Preencha o campo cpf");
-    return;
-  }
-
-  if (cpf.length < 14) {
-    console.log("CPF do usuário deve ter menos do que 14 caracteres");
-    return;
-
-  } else if (nome === "083-702-233-97") {
-    console.log("USUÁRIO JÁ CADASTRADO");
-  } else {
-    console.log("USUÁRIO NOVO");
-  }
-}
-
-function limparformulario(){
-formulario = document.querySelector("#theform");
-formulario.reset()
-}
-
-const btn = document.querySelector("#btn");
-btn.addEventListener("click", () => {
-  pegarNome();
-  pegarsobrenome()
-  pegarCPF()
-  limparformulario()
- 
+gerarTabela();
+btn.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  registroUsuarios();
+  gerarTabela();
 });

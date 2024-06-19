@@ -1,65 +1,68 @@
-
-#titulo{
-    color: #ffffff;
-    text-align: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: auto;
-    
+* {
+  font-family: sans-serif;
+}
+#titulo {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: auto;
 }
 
-
-.subtitulo{
-    font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.subtitulo {
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-#caixa{ 
-    padding: 50px 30px;
-    background-color: rgb(174, 184, 181);
-    width: 200px;
-    text-align: center;
-    border: 2px solid #000000;
-    border-radius: 10px;
-    margin: auto;
-    height: 200px;
-    font-size: 15px;
-
-
+#caixa {
+  padding: 50px 30px;
+  background-color: rgb(174, 184, 181);
+  width: 200px;
+  text-align: center;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  margin: auto;
+  height: 200px;
+  font-size: 15px;
 }
-#nome0{
- 
-    font-family: Georgia, 'Times New Roman', Times, serif;
-
+#nome0 {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-#sobrenome{
-    font-family: Georgia, Times, 'Times New Roman', serif;
-
+#sobrenome {
+  font-family: Georgia, Times, "Times New Roman", serif;
 }
 
-#data{
-
-    font-family: Georgia, 'Times New Roman', Times, serif;
-
+#data {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-
-
-
-
-.btn{
-    padding: 10px 8px;
-    width: 50px;
-    color: beige;
-    border: 1px solid #222;
-    border-radius: 5px;
-    user-select: none;
-    background-color: #0077ff;
-    cursor: pointer;
-
+.btn {
+  padding: 10px 8px;
+  width: 50px;
+  color: beige;
+  border: 1px solid #222;
+  border-radius: 5px;
+  user-select: none;
+  background-color: #0077ff;
+  cursor: pointer;
 }
-.btn:hover{
-    background-color: #6daffa;
-    transition: 1s;
+.btn:hover {
+  background-color: #6daffa;
+  transition: 1s;
 }
-#vdc{
- text-align: center;   
+#vdc {
+  text-align: center;
+}
+table,
+td,
+th,
+tr {
+  border: 3px solid black;
+  border-collapse: collapse;
+  width: 71vmax;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  text-align: center;
+  background-color: #eeeeee;
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
 }

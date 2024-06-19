@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,32 +13,54 @@
   </head>
 
   <body>
+    <div>
+      <table>
+        <!--TABELA-->
+        <thead>
+          <tr>
+            <!--COLUNA-->
+            <th>Nome Completo</th>
+            <!--CABEÇALHO-->
+            <th>CPF</th>
+            <th>Data de Nascimento</th>
+          </tr>
+        </thead>
+
+        <tbody id="userTable"></tbody>
+      </table>
+    </div>
+
     <div id="titulo">
-      <h1>FORMULARIO</h1>
+      <h1>FORMULÁRIO</h1>
       <p class="subtitulo">COLOQUE AS INFORMAÇÕES CORRETAMENTE</p>
     </div>
     <br />
     <form id="theform">
-    <div>
+      <div>
         <fieldset id="caixa">
           <div id="nome0">
             <label>DIGITE O NOME</label>
             <br />
-            <input type="text" name="DIGITE SEU NOME" class="nome" id="nome" />
+            <input type="text" name="DIGITE SEU NOME" id="nome" required />
           </div>
           <br />
           <div id="sobrenomee">
             <label>DIGITE O SOBRENOME</label>
             <br />
-            <input type="text" name="DIGITE SEU SOBRENOME" id="sobrenome" />
+            <input
+              type="text"
+              name="DIGITE SEU SOBRENOME"
+              id="sobrenome"
+              required
+            />
           </div>
 
           <br />
 
-          <div id="data">
+          <div id="date">
             <label class="quebra">QUAL A DATA DE NASCIMENTO?</label>
             <br />
-            <input type="date" name="date" min="2000-01-01" max="2024-05-06" />
+            <input type="date" name="date" min="2000-01-01" id="data" />
           </div>
           <br />
 
@@ -54,8 +76,8 @@
             <button id="btn">Salvar</button>
           </div>
         </div>
-    </div>
-  </form>
+      </div>
+    </form>
   </body>
 
   <script src="script.js"></script>
